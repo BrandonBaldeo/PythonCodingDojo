@@ -1,0 +1,27 @@
+//Query: Create 3 new users
+INSERT INTO Users(first_name,last_name,email) VALUES('Brandon','Baldeo','brandonb152@gmail.com')
+INSERT INTO Users(first_name,last_name,email) VALUES('Luna','Rios','LunaR@gmail.com')
+INSERT INTO Users(first_name,last_name,email) VALUES('Jake','Blake','JakeB@gmail.com')
+
+//Query: Retrieve all the users
+SELECT * FROM Users
+
+//Query: Retrieve the first user using their email address
+SELECT * FROM Users Where email='brandonb152@gmail.com';
+
+//Query: Retrieve the last user using their id
+SELECT * FROM USERS Where id=3
+
+Query: Change the user with id=3 so their last name is Pancakes
+UPDATE USERS SET last_name='pancakes' Where id=3
+
+//Query: Delete the user with id=2 from the database
+DELETE FROM Users Where id=2
+
+//Query: Get all the users, sorted by their first name
+SELECT * FROM USERS ORDER BY first_name 
+
+//BONUS Query: Get all the users, sorted by their first name in descending order
+SELECT * FROM USERS ORDER BY first_name Desc
+
+
