@@ -1,0 +1,37 @@
+//Query: Create 3 new dojos
+INSERT INTO dojos(name) VALUES('Coding Dojo');
+INSERT INTO dojos(name) VALUES('App Academy');
+INSERT INTO dojos(name) VALUES('FullStack Academy');
+
+//Query: Delete the 3 dojos you just created
+SET SQL_SAFE_UPDATES = 0;
+DELETE FROM dojos;
+
+//Query: Create 3 more dojos
+INSERT INTO dojos(name) VALUES('Coding Dojo');
+INSERT INTO dojos(name) VALUES('App Academy');
+INSERT INTO dojos(name) VALUES('FullStack Academy');
+
+//Query: Create 3 ninjas that belong to the first dojo
+INSERT INTO ninjas(first_name,last_name,age,dojos_id) VALUES('Brandon','Baldeo',24,4);
+INSERT INTO ninjas(first_name,last_name,age,dojos_id) VALUES('Luna','Rios',24,4);
+INSERT INTO ninjas(first_name,last_name,age,dojos_id) VALUES('Jake','Blake',29,4);
+
+//Query: Create 3 ninjas that belong to the second dojo
+INSERT INTO ninjas(first_name,last_name,age,dojos_id) VALUES('Nick','Rick',20,5);
+INSERT INTO ninjas(first_name,last_name,age,dojos_id) VALUES('James','May',28,5);
+INSERT INTO ninjas(first_name,last_name,age,dojos_id) VALUES('April','Heather',39,5);
+
+//Query: Create 3 ninjas that belong to the third dojo
+INSERT INTO ninjas(first_name,last_name,age,dojos_id) VALUES('Sam','Mann',40,6);
+INSERT INTO ninjas(first_name,last_name,age,dojos_id) VALUES('Jack','Stack',25,6);
+INSERT INTO ninjas(first_name,last_name,age,dojos_id) VALUES('Stephanie','Blue',59,6);
+
+//Query: Retrieve all the ninjas from the first dojo
+SELECT * FROM ninjas WHERE dojos_id=4
+
+//Query: Retrieve all the ninjas from the last dojo
+SELECT * FROM ninjas WHERE dojos_id=6
+
+//Query: Retrieve the last ninja's dojo
+SELECT dojos_id FROM ninjas WHERE id=11;
