@@ -5,11 +5,22 @@ app.secret_key = 'keep it secret, keep it safe'
 
 @app.route('/')
 def index():
+    if 'counter' not in session:
+        session['counter']=1
+    else:
+        session['counter']=session['counter']+1
     return render_template('index.html')
 
-@app.route('/destroy_session',methods=['POST'])
+@app.route('/',methods=['POST'])
+def counter():
+    session['counter']+=1
+    return redirect('/')
+
+
+@app.route('/destroy_session')
 def destroy():
-    return redirect('index.html')
+    session.clear()
+    return redirect('/')
 
 
 
