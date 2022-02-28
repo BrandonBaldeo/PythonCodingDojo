@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Show all Users Mod</title>
+  </head>
+  <body>
+    <h1>All Users</h1>
+    <table>
+      <thead>
+          <tr>
+              <th>ID</th>
+              <th>First</th>
+              <th>Last</th>
+              <th>Email</th>
+              <th>Created At</th>
+              <th>Actions</th>
+          </tr>
+      </thead>
+      <tbody>
+          {% for user in users%}
+          <tr>
+              <th>{{user.id}}</th>
+              <th>{{user.first_name}}</a></th>
+              <th>{{user.last_name}}</th>
+              <th>{{user.email}}</th>
+              <th>{{user.created_at}}</th>
+              <th>
+                  <a href ="/{{user.id}}">Show</a> 
+                  <a  href ="/{{user.id}}/edit">Edit</a> 
+                  <a href ="/{{user.id}}/delete">Delete</a>
+              </th>
+          </tr>
+          {% endfor %}
+      </tbody>
+  </table>
+
+  <a href="/create">Add a New User</a>
+  </body>
+</html>
