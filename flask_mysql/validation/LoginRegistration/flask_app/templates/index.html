@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Python Exam</title>
+  </head>
+        <form action="/register" method="post">
+          <h1>Register</h1>
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
+            <p>{{message}}</p>
+            {% endfor %} {% endif %} {% endwith %}
+            First Name:<input
+              type="text"
+              name="first_name"
+            />
+            Last Name:<input
+              type="text"
+              name="last_name"
+            />
+            Email address:<input 
+            type="email"  name="email" />
+            Password:
+            <input
+              type="password"
+              name="password"
+            />
+            Confirm Password:
+            <input
+              type="password"
+              name="confirm_pass"
+            />
+            <button type="submit">Register</button>
+        </form>
+        <form action="/login" method="post">
+          <h1>Login</h1>
+          Email:<input type="email" name="email" />
+Password:<input
+              type="password"
+              name="password"
+            />
+          <button type="submit">Login</button>
+        </form>
+  </body>
+</html>
